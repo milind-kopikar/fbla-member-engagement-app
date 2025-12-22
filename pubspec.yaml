@@ -1,0 +1,29 @@
+name: fbla_member_engagement
+description: "FBLA Member Engagement App - 2025-2026 Mobile Application Development Competition"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Material Design icons
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  # Linting rules for code quality
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  
+  # Assets would go here if needed
+  # assets:
+  #   - images/
+  #   - data/
