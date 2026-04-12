@@ -52,8 +52,8 @@ lib/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/mokshkopikar/fbla_mobile_app.git
-   cd fbla_mobile_app
+   git clone https://github.com/milind-kopikar/fbla-member-engagement-app.git
+   cd fbla-member-engagement-app
    ```
 
 2. **Install dependencies**
@@ -139,8 +139,8 @@ Download from [developer.android.com/studio](https://developer.android.com/studi
 ### Step 5 — Clone and run the project
 
 ```bash
-git clone https://github.com/mokshkopikar/fbla_mobile_app.git
-cd fbla_mobile_app
+git clone https://github.com/milind-kopikar/fbla-member-engagement-app.git
+cd fbla-member-engagement-app
 
 # Install Dart/Flutter dependencies
 flutter pub get
