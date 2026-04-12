@@ -52,7 +52,7 @@ lib/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/mokshkopikar/fbla_mobile_app.git
    cd fbla_mobile_app
    ```
 
@@ -77,6 +77,103 @@ flutter build apk --release
 ```bash
 flutter build ios --release
 ```
+
+---
+
+## 💻 macOS / New Machine Setup (Handoff Guide)
+
+Use this section when setting up the project on a new Mac.
+
+### Step 1 — Install Flutter
+
+The recommended way on macOS is via Homebrew:
+
+```bash
+brew install --cask flutter
+```
+
+Or download the Flutter SDK manually from [flutter.dev](https://docs.flutter.dev/get-started/install/macos) and add it to your PATH:
+
+```bash
+# Add to ~/.zshrc or ~/.bash_profile
+export PATH="$HOME/development/flutter/bin:$PATH"
+source ~/.zshrc
+```
+
+Verify the install:
+
+```bash
+flutter doctor
+```
+
+### Step 2 — Install Xcode (required for iOS)
+
+1. Install **Xcode** from the Mac App Store (large download — ~15 GB).
+2. Open Xcode once to accept the license agreement, then run:
+   ```bash
+   sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+   sudo xcodebuild -runFirstLaunch
+   ```
+3. Install the iOS Simulator runtime via **Xcode → Settings → Platforms**.
+
+### Step 3 — Install CocoaPods (required for iOS dependencies)
+
+```bash
+sudo gem install cocoapods
+```
+
+Or via Homebrew (preferred on Apple Silicon Macs):
+
+```bash
+brew install cocoapods
+```
+
+### Step 4 — Install Android Studio (optional, for Android target)
+
+Download from [developer.android.com/studio](https://developer.android.com/studio). After installing:
+
+1. Open Android Studio → **More Actions → SDK Manager**
+2. Install **Android SDK** (API level 33 or higher recommended)
+3. Create a virtual device via **More Actions → Virtual Device Manager**
+
+### Step 5 — Clone and run the project
+
+```bash
+git clone https://github.com/mokshkopikar/fbla_mobile_app.git
+cd fbla_mobile_app
+
+# Install Dart/Flutter dependencies
+flutter pub get
+
+# Install iOS native dependencies
+cd ios && pod install && cd ..
+
+# Check everything is wired up
+flutter doctor -v
+
+# Run on iOS Simulator
+flutter run -d simulator
+
+# Run on connected physical device
+flutter run
+```
+
+### Step 6 — VS Code setup (recommended editor)
+
+1. Install [VS Code](https://code.visualstudio.com/)
+2. Install the **Flutter** extension (ID: `Dart-Code.flutter`) — this also installs the Dart extension
+3. Open the project folder: `code fbla_mobile_app/`
+4. Use **Run → Start Debugging** or press `F5` to launch
+
+### Common Issues on macOS
+
+| Problem | Fix |
+|---|---|
+| `flutter doctor` shows Xcode not found | Run `sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer` |
+| `pod install` fails on Apple Silicon | Run `arch -x86_64 pod install` or `sudo arch -x86_64 gem install cocoapods` |
+| iOS Simulator not listed | Open Xcode → Settings → Platforms, download an iOS runtime |
+| `Unable to locate Dart SDK` in VS Code | Install the Flutter VS Code extension (it bundles Dart) |
+| `flutter run` picks wrong device | List devices with `flutter devices`, then `flutter run -d <device-id>` |
 
 ## 📚 Key Features
 
